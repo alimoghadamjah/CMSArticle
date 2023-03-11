@@ -20,7 +20,6 @@ namespace CMSArticle.Repository.Repository
             dbSet = Context.Set<T>();
         }
 
-
         public IEnumerable<T> GetAll()
         {
             return dbSet.ToList();
@@ -88,6 +87,7 @@ namespace CMSArticle.Repository.Repository
         {
             db.SaveChanges();
         }
+
         public void Dispose()
         {
             db.Dispose();
