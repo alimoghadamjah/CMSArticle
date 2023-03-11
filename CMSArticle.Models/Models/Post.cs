@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CMSArticle.Models.Models
 {
     [Table("T_Posts")]
-    public class Post
+    public class Post:BaseEntity
     {
         [Key]
         public int PostId { get; set; }

@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CMSArticle.Models.Models
 {
     [Table("T_Categories")]
-    public class Category
+    public class Category:BaseEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
