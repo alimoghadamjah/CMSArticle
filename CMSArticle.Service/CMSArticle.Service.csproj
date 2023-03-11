@@ -52,10 +52,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\CategoryService.cs" />
+    <Compile Include="Service\GenericService.cs" />
+    <Compile Include="Service\ICategoryService.cs" />
+    <Compile Include="Service\IGenericService.cs" />
+    <Compile Include="Service\IPostService.cs" />
+    <Compile Include="Service\IUserService.cs" />
+    <Compile Include="Service\PostService.cs" />
+    <Compile Include="Service\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CMSArticle.Models\CMSArticle.Models.csproj">
+      <Project>{da3d3efa-910f-4bd8-a86e-767eb34f2019}</Project>
+      <Name>CMSArticle.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMSArticle.Repository\CMSArticle.Repository.csproj">
+      <Project>{1ee4dc39-dd59-4699-a2b1-7327df22b14c}</Project>
+      <Name>CMSArticle.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
