@@ -14,6 +14,7 @@ namespace CMSArticle.Repository.Repository
         DbCMSArticleContext db;
         DbSet<T> dbSet;
 
+        public GenericRepository(){}
         public GenericRepository(DbCMSArticleContext Context)
         {
             db = Context;

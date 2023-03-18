@@ -1,0 +1,31 @@
+﻿@model IEnumerable<CMSArticle.Models.ViewModels.CategoriesViewModels>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.ActionLink("ویرایش", "Edit", new { id = item.CategoryId }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.CategoryId }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

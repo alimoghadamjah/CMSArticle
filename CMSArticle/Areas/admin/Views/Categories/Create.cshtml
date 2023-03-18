@@ -1,0 +1,54 @@
+﻿@model CMSArticle.Models.ViewModels.CategoriesViewModels
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h4>ثبت دسته بندی جدید</h4>
+
+
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="col-md-12" style="display:flex; flex-direction:row; margin-top:20px">
+            <div class="col-md-4">
+                <input type="number" id="CategoryId" name="CategoryId" class="form-control" placeholder="آیدی دسته بندی" />
+            </div>
+            <div class="col-md-4">
+                <input type="text" id="Title" name="Title" class="form-control" placeholder="نام دسته بندی" />
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-success" style="padding:5px 30px" onclick="CreateCategory()">ذخیره</button>
+            </div>
+        </div>
+    }
+</div>
+<div id="Category" style="margin-top:100px">
+    @Html.Action("Index")
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        function CreateCategory() {
+            var id = $("#CategoryId").val;
+            var title = $("#Title").val;
+            $.ajax({
+                url: '/Categories/Create',
+                type: 'POST',
+                data: { CategoryId: id, Title: title },
+                success: function (res) {
+                    $("#Category").html(res);
+                },
+                error: function () {
+                }
+            });
+        }
+    </script>
+}

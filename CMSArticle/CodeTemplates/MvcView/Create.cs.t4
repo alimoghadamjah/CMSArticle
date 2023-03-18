@@ -79,8 +79,6 @@ if (ReferenceScriptLibraries) {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4><#= ViewDataTypeShortName #></h4>
-        <hr />
 <# 
     if (isControlHtmlAttributesSupported) {
 #>

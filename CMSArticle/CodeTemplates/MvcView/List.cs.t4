@@ -22,8 +22,6 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
 #>
 }
 
-<h2><#= ViewName#></h2>
-
 <#
 } else {
 #>
@@ -45,7 +43,7 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
 }
 #>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("درج آیتم جدید", "Create",null,new{@class="btn btn-success"})
 </p>
 <table class="table">
     <tr>
@@ -95,17 +93,17 @@ string pkName = GetPrimaryKeyName();
 if (pkName != null) {
 #>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.<#= pkName #> }) |
-            @Html.ActionLink("Details", "Details", new { id=item.<#= pkName #> }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.<#= pkName #> })
+            @Html.ActionLink("ویرایش", "Edit", new { id=item.<#= pkName #> },new{@class="btn btn-warning"}) |
+            @Html.ActionLink("جزئیات", "Details", new { id=item.<#= pkName #> },new{@class="btn btn-info"}) |
+            @Html.ActionLink("حذف", "Delete", new { id=item.<#= pkName #> },new{@class="btn btn-danger"})
         </td>
 <#
 } else {
 #>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("ویرایش", "Edit", new { /* id=item.PrimaryKey */ },new{@class="btn btn-warning"}) |
+            @Html.ActionLink("جزئیات", "Details", new { /* id=item.PrimaryKey */ },new{@class="btn btn-info"}) |
+            @Html.ActionLink("حذف", "Delete", new { /* id=item.PrimaryKey */ },new{@class="btn btn-danger"})
         </td>
 <#
 }
